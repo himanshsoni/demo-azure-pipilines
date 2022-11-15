@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="45eeab57-f069-4ca6-af1b-0203748fd6d3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="demo-azureFlow" doc:id="bf5ffc88-8734-49e0-8816-9f8d40197770" >
+		<http:listener doc:name="Listener" doc:id="931e4a02-30f5-47c6-a7cb-b391d241ef47" config-ref="HTTP_Listener_config" path="/greet"/>
+		<ee:transform doc:name="Transform Message" doc:id="b8675fe4-f4c0-42f3-86f8-c6806062b805" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message":"Hello Himansh"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
