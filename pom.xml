@@ -35,7 +35,7 @@
 				
 				 <uri>https://anypoint.mulesoft.com</uri>
 				
-				 <server>${server}</server>
+				
 				
 				 <muleVersion>4.4.0</muleVersion>
 				
@@ -45,7 +45,7 @@
 				
 				<workerType>Micro</workerType>
 				
-				<environment>$Sandbox</environment>
+				<environment>Sandbox</environment>
 				
 				 <objectStoreV2>true</objectStoreV2>
 				
