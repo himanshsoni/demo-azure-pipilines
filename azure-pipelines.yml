@@ -49,4 +49,4 @@ steps:
     mavenVersionOption: 'Default'
     effectivePomSkip: true
     sonarQubeRunAnalysis: false
-    goals: 'clean install package deploy $(MAVEN_OPTS)  -DmuleDeploy  -Denvironment=Sandbox -Dworker=1 -DworkerType=Micro -Dapp.runtime=4.4.0 -Dapp.name=demo-azure'
+    goals: 'clean install  deploy $(MAVEN_OPTS)  -DmuleDeploy  -Denvironment=Sandbox -Dworker=1 -DworkerType=Micro -Dapp.runtime=4.4.0 -Dapp.name=demo-azure'
